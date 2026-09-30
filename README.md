@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=190&color=0:1F2A1F,45:3F5B3B,72:6A5A3F,100:A18463&text=AMGED&fontColor=F4F1E8&fontSize=52&fontAlignY=31&desc=Learning%20in%20public%20%E2%80%A2%20building%20OpenFHS%20%E2%80%A2%20exploring%20useful%20software&descAlignY=48&animation=fadeIn" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&height=190&color=0:1F2A1F,45:3F5B3B,72:6A5A3F,100:A18463&text=AMGED&fontColor=F4F1E8&fontSize=52&fontAlignY=31&desc=Learning%20Software%20Development%20%E2%80%A2%20Building%20Open%20Source%20Tools%20for%20Animals%20%26%20the%20Environment&descAlignY=48&animation=fadeIn" width="100%" />
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=23&pause=900&color=7FA36A&center=true&vCenter=true&width=800&lines=%F0%9F%90%88+Building+OpenFHS;%E2%98%81%EF%B8%8F+Learning+Cloud+%26+DevOps;%F0%9F%91%81%EF%B8%8F+Experimenting+with+Computer+Vision;%F0%9F%90%B1+Thinking+about+my+cat+%29%3B;%F0%9F%8C%B1+Figuring+things+out+as+I+go" alt="Typing animation" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=23&pause=900&color=7FA36A&center=true&vCenter=true&width=800&lines=%F0%9F%90%88+Building+OpenFHS;%F0%9F%8C%BF+Building+Animal+%26+Environmental+Tools;%E2%98%81%EF%B8%8F+Learning+Cloud+%26+DevOps;%F0%9F%91%81%EF%B8%8F+Learning+Computer+Vision;%F0%9F%90%B1+Thinking+About+My+Cat+%29%3B" alt="Typing animation" />
 
 <br/>
 
@@ -13,11 +13,13 @@
 
 ---
 
-## 🐈 Currently building: OpenFHS
+## 🐈 Current Project: OpenFHS
 
 **OpenFHS began with Feline Hyperesthesia Syndrome and is growing toward an Open Feline Health Standard.**
 
-I’m still very new to software development and learning in public by building it around structured observation, uncertainty, provenance, missingness, privacy, and open data portability.
+I’m new to software development, and OpenFHS is where I’m learning how to design, test, document, and maintain a real open-source project. It focuses on structured feline-health observations, uncertainty, provenance, missingness, privacy, and data portability.
+
+The other tools on this profile are separate animal and environmental projects that I plan to develop over time. OpenFHS will stay focused on cats.
 
 > Experimental learning-focused open-source alpha. I’m not presenting this as professional veterinary, clinical, or research work. OpenFHS is not diagnostic AI, veterinary advice, a veterinary service, clinical validation, or a research study.
 
@@ -32,7 +34,7 @@ I’m still very new to software development and learning in public by building 
 
 ---
 
-## 🌱 What I'm learning
+## 🌱 What I'm Learning
 
 <div align="center">
 
@@ -40,22 +42,20 @@ I’m still very new to software development and learning in public by building 
 
 <br/><br/>
 
-**Python** · **Cloud & DevOps** · **Open Source** · **Computer Vision basics** · **Privacy-minded tooling** · **Research-friendly software design**
+**Python** · **JavaScript** · **Git** · **GitHub** · **Linux** · **Docker** · **Cloud & DevOps** · **Computer Vision** · **Open Source Development**
 
 <br/><br/>
 
-I’m still at the beginning of this, so I’m learning by building real things, breaking them, fixing them, testing them, and documenting what I figure out.
+I’m learning by building real projects, testing what I make, fixing what breaks, and documenting what I figure out along the way.
 
 </div>
 
 ---
 
-## 📊 The nerdy numbers
+## 📊 GitHub Activity
 
 <div align="center">
 
-[![OpenFHS Stars](https://img.shields.io/github/stars/amgedi/OpenFHS?style=for-the-badge&logo=github&label=OpenFHS%20Stars&color=58704F)](https://github.com/amgedi/OpenFHS/stargazers)
-[![OpenFHS Forks](https://img.shields.io/github/forks/amgedi/OpenFHS?style=for-the-badge&logo=github&label=Forks&color=806B4F)](https://github.com/amgedi/OpenFHS/forks)
 [![Last Commit](https://img.shields.io/github/last-commit/amgedi/OpenFHS?style=for-the-badge&logo=git&label=Last%20Commit&color=6F875F)](https://github.com/amgedi/OpenFHS/commits/main)
 [![Repo Size](https://img.shields.io/github/repo-size/amgedi/OpenFHS?style=for-the-badge&logo=github&label=Repo%20Size&color=725D45)](https://github.com/amgedi/OpenFHS)
 
@@ -67,7 +67,7 @@ I’m still at the beginning of this, so I’m learning by building real things,
 
 ---
 
-## 🐍 Contribution activity
+## 🐍 Contribution Activity
 
 <div align="center">
 
@@ -81,38 +81,35 @@ I’m still at the beginning of this, so I’m learning by building real things,
 
 ---
 
-## 🧪 What I'm exploring
+## 🧰 Other Tools on the Roadmap
+
+OpenFHS is the first active build. These are separate tools I want to develop over time, each aimed at a specific animal, conservation, or data problem.
 
 <table>
 <tr>
 <td width="33%" valign="top">
 
-### 🐾 Learning through OpenFHS
-- Structuring observations over time
-- Representing uncertainty and missingness
-- Data portability
-- Exploring research-friendly data structures
-- Keeping human review in the loop
+### 🌿 Wildlife & Field Tools
+- **RewildLog**
+- **Bird-Safe Window Planner**
+- **Wildlife Behavior Notebook**
+- **Wildlife Incident Handoff**
+- **Wildlife Survey Effort Recorder**
 
 </td>
 <td width="33%" valign="top">
 
-### 🔐 Privacy & CV practice
-- Local processing
-- Redaction experiments
-- Computer vision basics
-- Reproducible testing
-- Avoiding overconfident AI claims
+### 🗂️ Data & Rescue Tools
+- **Biodiversity Data Rescue Workbench**
+- **Shelter Data Translator**
+- **Conservation Data Bridge**
 
 </td>
 <td width="33%" valign="top">
 
-### 🌿 Environment-minded software
-- Learning about digital sustainability
-- Local-first where practical
-- Reusing open tools before adding more
-- Avoiding unnecessary compute
-- Exploring how software can reduce waste
+### 📐 Evidence & Project Tools
+- **Conservation Evidence Ledger**
+- **Conservation Project Archive**
 
 </td>
 </tr>
@@ -120,22 +117,7 @@ I’m still at the beginning of this, so I’m learning by building real things,
 
 ---
 
-## 🌱 Learning in public
-
-<div align="center">
-
-![Python](https://img.shields.io/badge/Python-learning-58704F?style=for-the-badge&logo=python&logoColor=white)
-![Git](https://img.shields.io/badge/Git-learning-806B4F?style=for-the-badge&logo=git&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-exploring-667A58?style=for-the-badge&logo=githubactions&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-learning-52694D?style=for-the-badge&logo=docker&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-experimenting-8A6F52?style=for-the-badge&logo=pytorch&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-learning-6D7956?style=for-the-badge&logo=linux&logoColor=white)
-
-</div>
-
----
-
-## 🧭 Things I'm learning to build around
+## 🧭 Project Principles
 
 ```text
 observe > assume
@@ -148,7 +130,7 @@ open standards > locked-in data
 
 ---
 
-## 💜 Support me :3
+## 💜 Support Me / Ask Any Questions! :3
 
 <div align="center">
 
@@ -162,7 +144,7 @@ open standards > locked-in data
 
 <div align="center">
 
-### 🌿 Learning how to make useful software with less unnecessary digital waste.
+### 🌿 Building Open Source Tools for Animals, Conservation, and Better Data.
 
 <img src="https://capsule-render.vercel.app/api?type=waving&height=110&section=footer&color=0:A18463,45:6A5A3F,72:3F5B3B,100:1F2A1F" width="100%" />
 
