@@ -81,35 +81,30 @@ I’m learning by building real projects, testing what I make, fixing what break
 
 ---
 
-## 🧰 Other Tools on the Roadmap
+## 🧰 More Projects in Progress
 
-OpenFHS is the first active build. These are separate tools I want to develop over time, each aimed at a specific animal, conservation, or data problem.
+OpenFHS is the first active public build, but it is definitely not the only thing I want to make. I have a few other animal, conservation, and data tools in the works behind the scenes.
+
+I’m keeping most of those ideas private until they are far enough along to actually show something useful xD
 
 <table>
 <tr>
 <td width="33%" valign="top">
 
-### 🌿 Wildlife & Field Tools
-- **RewildLog**
-- **Bird-Safe Window Planner**
-- **Wildlife Behavior Notebook**
-- **Wildlife Incident Handoff**
-- **Wildlife Survey Effort Recorder**
+### 🐾 Animal & Wildlife Tools
+Ideas focused on observation, welfare, and practical field use.
 
 </td>
 <td width="33%" valign="top">
 
-### 🗂️ Data & Rescue Tools
-- **Biodiversity Data Rescue Workbench**
-- **Shelter Data Translator**
-- **Conservation Data Bridge**
+### 🌿 Conservation Tools
+Small tools for real conservation and environmental workflows.
 
 </td>
 <td width="33%" valign="top">
 
-### 📐 Evidence & Project Tools
-- **Conservation Evidence Ledger**
-- **Conservation Project Archive**
+### 🗂️ Data Tools
+Projects around messy data, preservation, portability, and research workflows.
 
 </td>
 </tr>
