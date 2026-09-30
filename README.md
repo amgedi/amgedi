@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/profile-banner.svg" width="100%" alt="AMGED profile banner" />
+<img src="./assets/profile-banner-animated.svg" width="100%" alt="AMGED profile banner" />
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=23&pause=900&color=7FA36A&center=true&vCenter=true&width=800&lines=%F0%9F%90%88+Building+OpenFHS;%F0%9F%8C%BF+Building+Animal+%26+Environmental+Tools;%E2%98%81%EF%B8%8F+Learning+Cloud+%26+DevOps;%F0%9F%91%81%EF%B8%8F+Learning+Computer+Vision;%F0%9F%90%B1+Thinking+About+My+Cat+%29%3B" alt="Typing animation" />
 
