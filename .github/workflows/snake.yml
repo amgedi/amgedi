@@ -22,28 +22,50 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-contribution-grid-snake-earthy.svg?color_snake=#58704F&color_dots=#F4F1E8,#C8D3BD,#93AC80,#6F875F,#3F5B3B
-            dist/github-contribution-grid-snake-earthy-dark.svg?palette=github-dark&color_snake=#6F875F&color_dots=#161B22,#2B382A,#3F5B3B,#58704F,#6F875F
+            dist/github-contribution-garden.svg?color_snake=#58704F&color_dots=#F4F1E8,#C8D3BD,#93AC80,#6F875F,#3F5B3B
+            dist/github-contribution-garden-dark.svg?palette=github-dark&color_snake=#6F875F&color_dots=#161B22,#2B382A,#3F5B3B,#58704F,#6F875F
 
-      - name: Give the snake an earthy green head-to-tail gradient
+      - name: Add earthy snake gradient and decorative garden squares
         shell: python
         run: |
           from pathlib import Path
+          import random
+          import re
 
-          palettes = {
-              "dist/github-contribution-grid-snake-earthy.svg":
-                  ["#93AC80", "#6F875F", "#58704F", "#3F5B3B"],
-              "dist/github-contribution-grid-snake-earthy-dark.svg":
-                  ["#A8B89A", "#7F986F", "#58704F", "#32442F"],
+          files = {
+              "dist/github-contribution-garden.svg": {
+                  "snake": ["#93AC80", "#6F875F", "#58704F", "#3F5B3B"],
+                  "garden": ["#C8D3BD", "#93AC80", "#6F875F", "#3F5B3B"],
+              },
+              "dist/github-contribution-garden-dark.svg": {
+                  "snake": ["#A8B89A", "#7F986F", "#58704F", "#32442F"],
+                  "garden": ["#2B382A", "#3F5B3B", "#58704F", "#6F875F"],
+              },
           }
 
-          for filename, colors in palettes.items():
+          blank_cell = re.compile(r'<rect class="c"(?P<rest>[^>]*)/>')
+
+          for filename, palette in files.items():
               path = Path(filename)
               svg = path.read_text(encoding="utf-8")
-              overrides = "".join(
-                  f".s.s{i}{{fill:{color}}}" for i, color in enumerate(colors)
+
+              snake_overrides = "".join(
+                  f".s.s{i}{{fill:{color}}}"
+                  for i, color in enumerate(palette["snake"])
               )
-              svg = svg.replace("</style>", overrides + "</style>", 1)
+              svg = svg.replace("</style>", snake_overrides + "</style>", 1)
+
+              rng = random.Random(20260930)
+              weights = [0.50, 0.28, 0.16, 0.06]
+
+              def decorate(match):
+                  # Keep a little breathing room while making the board feel alive.
+                  if rng.random() > 0.56:
+                      return match.group(0)
+                  color = rng.choices(palette["garden"], weights=weights, k=1)[0]
+                  return f'<rect class="c" style="fill:{color}"{match.group("rest")}/>'
+
+              svg = blank_cell.sub(decorate, svg)
               path.write_text(svg, encoding="utf-8")
 
       - name: Publish snake to output branch
