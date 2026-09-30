@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=190&color=0:1F2A1F,45:3F5B3B,72:6A5A3F,100:A18463&text=AMGED&fontColor=F4F1E8&fontSize=52&fontAlignY=31&desc=Learning%20Software%20Development%20%E2%80%A2%20Building%20Open%20Source%20Tools%20for%20Animals%20%26%20the%20Environment&descAlignY=48&animation=fadeIn" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&amp;height=192&amp;color=0:1F2A1F,45:3F5B3B,72:6A5A3F,100:A18463&amp;text=AMGED&amp;fontColor=F4F1E8&amp;fontSize=52&amp;fontAlignY=31&amp;desc=Learning%20Software%20Development%20%E2%80%A2%20Building%20Animal%20%26%20Environmental%20Tools&amp;descAlignY=48&amp;animation=fadeIn" width="100%" alt="Amged profile banner" />
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=23&pause=900&color=7FA36A&center=true&vCenter=true&width=800&lines=%F0%9F%90%88+Building+OpenFHS;%F0%9F%8C%BF+Building+Animal+%26+Environmental+Tools;%E2%98%81%EF%B8%8F+Learning+Cloud+%26+DevOps;%F0%9F%91%81%EF%B8%8F+Learning+Computer+Vision;%F0%9F%90%B1+Thinking+About+My+Cat+%29%3B" alt="Typing animation" />
 
