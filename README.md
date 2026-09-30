@@ -72,9 +72,9 @@ I’m still at the beginning of this, so I’m learning by building real things,
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-grid-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-grid-snake.svg" />
-  <img alt="Animated contribution snake" src="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-grid-snake.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-grid-snake-earthy-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-grid-snake-earthy.svg" />
+  <img alt="Animated contribution snake" src="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-grid-snake-earthy.svg" />
 </picture>
 
 </div>
