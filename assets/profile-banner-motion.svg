@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="240" viewBox="0 0 1200 240" role="img" aria-labelledby="title desc">
+  <title id="title">AMGED</title>
+  <desc id="desc">Learning Software Development. Building Animal and Environmental Tools.</desc>
+
+  <defs>
+    <linearGradient id="earth" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1F2A1F"/>
+      <stop offset="42%" stop-color="#3F5B3B"/>
+      <stop offset="72%" stop-color="#6A5A3F"/>
+      <stop offset="100%" stop-color="#A18463"/>
+      <animate attributeName="x1" values="-8%;8%;-8%" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="108%;92%;108%" dur="12s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <linearGradient id="wave1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A18463" stop-opacity=".34"/>
+      <stop offset="52%" stop-color="#93AC80" stop-opacity=".27"/>
+      <stop offset="100%" stop-color="#F4F1E8" stop-opacity=".16"/>
+    </linearGradient>
+
+    <linearGradient id="wave2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#93AC80" stop-opacity=".18"/>
+      <stop offset="65%" stop-color="#F4F1E8" stop-opacity=".10"/>
+      <stop offset="100%" stop-color="#A18463" stop-opacity=".19"/>
+    </linearGradient>
+
+    <linearGradient id="wave3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#32442F" stop-opacity=".24"/>
+      <stop offset="55%" stop-color="#6F875F" stop-opacity=".18"/>
+      <stop offset="100%" stop-color="#C7B59C" stop-opacity=".12"/>
+    </linearGradient>
+
+    <linearGradient id="shine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F4F1E8" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#F4F1E8" stop-opacity=".12"/>
+      <stop offset="100%" stop-color="#F4F1E8" stop-opacity="0"/>
+    </linearGradient>
+
+    <clipPath id="round">
+      <rect width="1200" height="240" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#round)">
+    <rect width="1200" height="240" fill="url(#earth)"/>
+
+    <circle cx="1070" cy="38" r="116" fill="#F4F1E8" opacity=".035">
+      <animate attributeName="cx" values="1040;1100;1040" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="32;50;32" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="108;128;108" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".022;.052;.022" dur="7s" repeatCount="indefinite"/>
+    </circle>
+
+    <circle cx="120" cy="218" r="138" fill="#F4F1E8" opacity=".025">
+      <animate attributeName="cx" values="90;155;90" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="220;204;220" dur="9s" repeatCount="indefinite"/>
+    </circle>
+
+    <g>
+      <path d="M-180 177 C40 116 290 226 525 172 C755 119 930 197 1115 151 C1205 129 1310 138 1440 166 L1440 270 L-180 270 Z" fill="url(#wave1)">
+        <animateTransform attributeName="transform" type="translate" values="-35 0;85 -8;-35 0" dur="8s" repeatCount="indefinite"/>
+      </path>
+
+      <path d="M-230 204 C25 158 245 221 500 191 C740 163 970 215 1430 174 L1430 270 L-230 270 Z" fill="url(#wave2)">
+        <animateTransform attributeName="transform" type="translate" values="55 0;-75 7;55 0" dur="11s" repeatCount="indefinite"/>
+      </path>
+
+      <path d="M-260 222 C70 188 305 238 590 211 C840 187 1070 225 1460 196 L1460 270 L-260 270 Z" fill="url(#wave3)">
+        <animateTransform attributeName="transform" type="translate" values="-70 0;45 -5;-70 0" dur="14s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <g opacity=".9">
+      <circle cx="-20" cy="62" r="3.2" fill="#D8E2D0" opacity=".20">
+        <animate attributeName="cx" values="-20;1220" dur="15s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="62;48;66;62" dur="15s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="-110" cy="118" r="2.2" fill="#C8D3BD" opacity=".16">
+        <animate attributeName="cx" values="-110;1210" dur="21s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="118;95;123;118" dur="21s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="-180" cy="150" r="2.8" fill="#E8E3D8" opacity=".13">
+        <animate attributeName="cx" values="-180;1200" dur="18s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="150;128;156;150" dur="18s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <rect x="-420" y="-45" width="260" height="340" fill="url(#shine)" transform="rotate(16 0 0)" opacity=".34">
+      <animate attributeName="x" values="-420;1420" dur="9s" repeatCount="indefinite"/>
+    </rect>
+
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;1" dur="1.2s" fill="freeze"/>
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="0 3;0 -3;0 3" dur="6s" begin="1.2s" repeatCount="indefinite"/>
+        <text x="600" y="92" text-anchor="middle" fill="#F4F1E8" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700" letter-spacing="4">AMGED</text>
+      </g>
+      <text x="600" y="137" text-anchor="middle" fill="#E8E3D8" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="600">Learning Software Development</text>
+      <text x="600" y="170" text-anchor="middle" fill="#D8E2D0" font-family="Arial, Helvetica, sans-serif" font-size="22">Building Animal &amp; Environmental Tools</text>
+    </g>
+  </g>
+</svg>
