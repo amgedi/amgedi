@@ -72,7 +72,7 @@ I’m learning by building real things instead of collecting tutorial tabs until
 
 ---
 
-## 🐍 Contribution arcade
+## 🐍 Contribution activity
 
 <div align="center">
 
@@ -143,7 +143,7 @@ open standards > locked-in data
 
 ---
 
-## 💫 Around the profile
+## 💜 Support me :3
 
 <div align="center">
 
