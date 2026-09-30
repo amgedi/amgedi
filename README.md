@@ -2,11 +2,10 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:111827,50:6d28d9,100:06b6d4&text=AMGED&fontColor=ffffff&fontSize=54&fontAlignY=38&desc=Building%20open-source%20things%20with%20cats,%20code,%20and%20chaos&descAlignY=58&animation=fadeIn" width="100%" />
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&pause=900&color=8B5CF6&center=true&vCenter=true&width=800&lines=%F0%9F%90%88+Building+OpenFHS;%E2%98%81%EF%B8%8F+Learning+Cloud+%26+DevOps;%F0%9F%91%81%EF%B8%8F+Experimenting+with+Computer+Vision;%F0%9F%94%90+Thinking+about+privacy-first+AI;%F0%9F%9A%80+Learning+by+actually+shipping+things" alt="Typing animation" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&pause=900&color=8B5CF6&center=true&vCenter=true&width=800&lines=%F0%9F%90%88+Building+OpenFHS;%E2%98%81%EF%B8%8F+Learning+Cloud+%26+DevOps;%F0%9F%91%81%EF%B8%8F+Experimenting+with+Computer+Vision;%F0%9F%90%B1+Thinking+about+my+cat+%29%3B;%F0%9F%9A%80+Learning+by+actually+shipping+things" alt="Typing animation" />
 
 <br/>
 
-[![GitHub followers](https://img.shields.io/github/followers/amgedi?style=for-the-badge&logo=github&label=Followers)](https://github.com/amgedi)
 [![OpenFHS](https://img.shields.io/badge/OpenFHS-0.5.8--alpha.11-8b5cf6?style=for-the-badge&logo=github)](https://github.com/amgedi/OpenFHS)
 [![AGPLv3](https://img.shields.io/badge/License-AGPLv3-06b6d4?style=for-the-badge)](https://github.com/amgedi/OpenFHS/blob/main/LICENSE)
 
