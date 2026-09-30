@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="240" viewBox="0 0 1200 240" role="img" aria-labelledby="title desc">
+  <title id="title">AMGED</title>
+  <desc id="desc">Learning Software Development. Building Animal and Environmental Tools.</desc>
+
+  <defs>
+    <linearGradient id="earth" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1F2A1F"/>
+      <stop offset="42%" stop-color="#3F5B3B"/>
+      <stop offset="72%" stop-color="#6A5A3F"/>
+      <stop offset="100%" stop-color="#A18463"/>
+      <animate attributeName="x1" values="0%;8%;0%" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="100%;92%;100%" dur="10s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <linearGradient id="wave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A18463" stop-opacity=".30"/>
+      <stop offset="55%" stop-color="#93AC80" stop-opacity=".24"/>
+      <stop offset="100%" stop-color="#F4F1E8" stop-opacity=".18"/>
+    </linearGradient>
+
+    <linearGradient id="wave2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#93AC80" stop-opacity=".14"/>
+      <stop offset="70%" stop-color="#F4F1E8" stop-opacity=".10"/>
+      <stop offset="100%" stop-color="#A18463" stop-opacity=".16"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="240" rx="28" fill="url(#earth)"/>
+
+  <circle cx="1060" cy="42" r="118" fill="#F4F1E8" opacity=".035">
+    <animate attributeName="r" values="110;126;110" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values=".025;.05;.025" dur="7s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="120" cy="216" r="132" fill="#F4F1E8" opacity=".025">
+    <animate attributeName="cx" values="100;135;100" dur="12s" repeatCount="indefinite"/>
+  </circle>
+
+  <g opacity=".95">
+    <path d="M-120 188 C90 132 300 230 530 178 C740 131 900 194 1080 154 C1150 140 1210 137 1320 160 L1320 240 L-120 240 Z" fill="url(#wave)">
+      <animateTransform attributeName="transform" type="translate" values="0 0;70 0;0 0" dur="9s" repeatCount="indefinite"/>
+    </path>
+    <path d="M-180 205 C30 166 230 214 470 194 C705 175 920 210 1380 176 L1380 240 L-180 240 Z" fill="url(#wave2)">
+      <animateTransform attributeName="transform" type="translate" values="0 0;-55 0;0 0" dur="12s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="1.2s" fill="freeze"/>
+    <text x="600" y="92" text-anchor="middle" fill="#F4F1E8" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700" letter-spacing="4">AMGED</text>
+    <text x="600" y="137" text-anchor="middle" fill="#E8E3D8" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="600">Learning Software Development</text>
+    <text x="600" y="170" text-anchor="middle" fill="#D8E2D0" font-family="Arial, Helvetica, sans-serif" font-size="22">Building Animal &amp; Environmental Tools</text>
+  </g>
+</svg>
