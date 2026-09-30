@@ -67,15 +67,17 @@ I’m learning by building real projects, testing what I make, fixing what break
 
 ---
 
-## 🐍 Contribution Activity
+## 🐍 Contribution Garden
 
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-grid-snake-earthy-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-grid-snake-earthy.svg" />
-  <img alt="Animated contribution snake" src="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-grid-snake-earthy.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden.svg" />
+  <img alt="Decorative animated contribution snake" src="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden.svg" />
 </picture>
+
+*The extra squares are decorative until my real contribution graph catches up xD*
 
 </div>
 
