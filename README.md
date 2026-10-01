@@ -13,10 +13,6 @@
 
 ---
 
-## 🐈 Current Project: OpenFHS
-
-**OpenFHS began with Feline Hyperesthesia Syndrome and is growing toward an Open Feline Health Standard.**
-
 I’m new to software development, and OpenFHS is where I’m learning how to design, test, document, and maintain a real open-source project. It focuses on structured feline-health observations, uncertainty, provenance, missingness, privacy, and data portability.
 
 The other tools on this profile are separate animal and environmental projects that I plan to develop over time. OpenFHS will stay focused on cats.
