@@ -58,9 +58,7 @@ I’m learning by building real projects, testing what I make, fixing what break
 
 [![Last Commit](https://img.shields.io/github/last-commit/amgedi/OpenFHS?style=for-the-badge&logo=git&label=Last%20Commit&color=6F875F)](https://github.com/amgedi/OpenFHS/commits/main)
 [![Repo Size](https://img.shields.io/github/repo-size/amgedi/OpenFHS?style=for-the-badge&logo=github&label=Repo%20Size&color=725D45)](https://github.com/amgedi/OpenFHS)
-
 <br/><br/>
-
 <img src="https://streak-stats.demolab.com?user=amgedi&theme=transparent&hide_border=true&stroke=41523D&ring=6F875F&fire=A18463&currStreakNum=DCE8D3&sideNums=DCE8D3&currStreakLabel=93AC80&sideLabels=93AC80&dates=82917B" alt="GitHub streak stats" />
 
 </div>
