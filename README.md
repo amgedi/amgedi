@@ -64,7 +64,6 @@ I’m learning by building real projects, testing what I make, fixing what break
 </div>
 
 ---
-
 ## 🐍 Contribution Garden
 
 <div align="center">
