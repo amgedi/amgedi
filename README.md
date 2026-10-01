@@ -77,7 +77,7 @@ I’m learning by building real projects, testing what I make, fixing what break
   <img alt="Decorative animated contribution snake" src="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden.svg?v=20261001-2" />
 </picture>
 
-*The extra squares are decorative until my real contribution graph catches up xD*
+*The extra garden squares are decorative, but they sit on the snake's route so they get eaten too xD*
 
 </div>
 
