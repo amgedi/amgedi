@@ -107,10 +107,9 @@ jobs:
               rng = random.Random(20260930)
               weights = [0.50, 0.28, 0.16, 0.06]
               garden_css = []
-              garden_index = 0
+              garden_index = [0]
 
               def decorate(match):
-                  nonlocal garden_index
 
                   rest = match.group("rest")
                   x_match = re.search(r'\bx="(\d+)"', rest)
@@ -129,8 +128,8 @@ jobs:
                       return match.group(0)
 
                   color = rng.choices(palette["garden"], weights=weights, k=1)[0]
-                  class_name = f"g{garden_index}"
-                  garden_index += 1
+                  class_name = f"g{garden_index[0]}"
+                  garden_index[0] += 1
 
                   before = max(0.0, min(99.98, eat_at))
                   after = min(100.0, before + 0.02)
