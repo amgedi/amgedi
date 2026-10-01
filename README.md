@@ -38,7 +38,7 @@ The other tools on this profile are separate animal and environmental projects t
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=python,js,html,css,git,github,docker,pytorch,linux,vscode&perline=10" />
+<img src="https://skillicons.dev/icons?i=python,js,html,css,git,github,docker,pytorch,linux,vscode&perline=10" alt="Python, JavaScript, HTML, CSS, Git, GitHub, Docker, PyTorch, Linux, and VS Code skill icons" />
 
 <br/><br/>
 
