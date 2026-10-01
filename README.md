@@ -72,9 +72,9 @@ I’m learning by building real projects, testing what I make, fixing what break
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden.svg" />
-  <img alt="Decorative animated contribution snake" src="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden-dark.svg?v=20261001-2" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden.svg?v=20261001-2" />
+  <img alt="Decorative animated contribution snake" src="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden.svg?v=20261001-2" />
 </picture>
 
 *The extra squares are decorative until my real contribution graph catches up xD*
