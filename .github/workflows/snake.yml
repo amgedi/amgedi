@@ -25,7 +25,7 @@ jobs:
             dist/github-contribution-garden.svg?color_snake=#58704F&color_dots=#F4F1E8,#C8D3BD,#93AC80,#6F875F,#3F5B3B
             dist/github-contribution-garden-dark.svg?palette=github-dark&color_snake=#6F875F&color_dots=#161B22,#2B382A,#3F5B3B,#58704F,#6F875F
 
-      - name: Add earthy snake gradient and decorative garden squares
+      - name: Add earthy snake gradient and edible garden squares
         shell: python
         run: |
           from pathlib import Path
@@ -44,28 +44,113 @@ jobs:
           }
 
           blank_cell = re.compile(r'<rect class="c"(?P<rest>[^>]*)/>')
+          snake_head = re.compile(
+              r'@keyframes s0\{(?P<body>.*?)\}\.s\.s0',
+              re.DOTALL,
+          )
+          movement = re.compile(
+              r'(?P<times>[^{}]+)\{transform:translate\('
+              r'(?P<x>-?\d+(?:\.\d+)?)px,'
+              r'(?P<y>-?\d+(?:\.\d+)?)px\)\}'
+          )
+
+          def snake_route_times(svg):
+              match = snake_head.search(svg)
+              if not match:
+                  raise RuntimeError("Could not find the generated snake-head animation")
+
+              points = []
+              for step in movement.finditer(match.group("body")):
+                  x = float(step.group("x"))
+                  y = float(step.group("y"))
+                  for value in re.findall(r'(\d+(?:\.\d+)?)%', step.group("times")):
+                      points.append((float(value), x, y))
+
+              points.sort(key=lambda point: point[0])
+              route = {}
+
+              for (start_t, start_x, start_y), (end_t, end_x, end_y) in zip(points, points[1:]):
+                  dx = end_x - start_x
+                  dy = end_y - start_y
+
+                  if dx and dy:
+                      continue
+
+                  distance = max(abs(dx), abs(dy))
+                  steps = round(distance / 16)
+                  if steps <= 0 or abs(distance - steps * 16) > 0.01:
+                      continue
+
+                  for index in range(1, steps + 1):
+                      fraction = index / steps
+                      x = round(start_x + dx * fraction)
+                      y = round(start_y + dy * fraction)
+                      when = start_t + (end_t - start_t) * fraction
+
+                      if x < 0 or y < 0:
+                          continue
+
+                      route.setdefault((x, y), when)
+
+              return route
 
           for filename, palette in files.items():
               path = Path(filename)
               svg = path.read_text(encoding="utf-8")
+              route_times = snake_route_times(svg)
 
               snake_overrides = "".join(
                   f".s.s{i}{{fill:{color}}}"
                   for i, color in enumerate(palette["snake"])
               )
-              svg = svg.replace("</style>", snake_overrides + "</style>", 1)
 
               rng = random.Random(20260930)
               weights = [0.50, 0.28, 0.16, 0.06]
+              garden_css = []
+              garden_index = 0
 
               def decorate(match):
-                  # Keep a little breathing room while making the board feel alive.
-                  if rng.random() > 0.56:
+                  nonlocal garden_index
+
+                  rest = match.group("rest")
+                  x_match = re.search(r'\bx="(\d+)"', rest)
+                  y_match = re.search(r'\by="(\d+)"', rest)
+
+                  if not x_match or not y_match:
                       return match.group(0)
+
+                  # Rectangles are inset by 2px; the snake moves on a 16px grid.
+                  cell = (int(x_match.group(1)) - 2, int(y_match.group(1)) - 2)
+                  eat_at = route_times.get(cell)
+
+                  # Only add decorative food where the generated snake actually travels.
+                  # That way every extra square the user sees really can be eaten.
+                  if eat_at is None or rng.random() > 0.56:
+                      return match.group(0)
+
                   color = rng.choices(palette["garden"], weights=weights, k=1)[0]
-                  return f'<rect class="c" style="fill:{color}"{match.group("rest")}/>'
+                  class_name = f"g{garden_index}"
+                  garden_index += 1
+
+                  before = max(0.0, min(99.98, eat_at))
+                  after = min(100.0, before + 0.02)
+
+                  garden_css.append(
+                      f"@keyframes {class_name}{{"
+                      f"0%,{before:.2f}%{{fill:{color}}}"
+                      f"{after:.2f}%,100%{{fill:var(--ce)}}"
+                      f"}}"
+                      f".c.{class_name}{{fill:{color};animation-name:{class_name}}}"
+                  )
+
+                  return f'<rect class="c {class_name}"{rest}/>'
 
               svg = blank_cell.sub(decorate, svg)
+              svg = svg.replace(
+                  "</style>",
+                  snake_overrides + "".join(garden_css) + "</style>",
+                  1,
+              )
               path.write_text(svg, encoding="utf-8")
 
       - name: Publish snake to output branch
