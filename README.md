@@ -12,9 +12,9 @@
 
 ## 👋 About Me
 
-I'm **Amged**. I'm learning software development by building real open-source projects around animals, conservation, privacy, research-friendly data, and practical field workflows.
+I'm **Amged**. I'm learning software development by building real open-source projects around animals, conservation, research-friendly data, and practical field workflows.
 
-I like software that has to deal with uncertainty instead of pretending everything is perfectly known. Along the way I'm learning **Cloud, DevOps, Linux, Git/GitHub, Python, TypeScript, desktop development, and computer vision**.
+I like projects where the software has to deal with messy information, uncertainty, real users, and real constraints. Along the way I'm learning **Cloud, DevOps, Linux, Git/GitHub, Python, TypeScript, desktop development, and computer vision**.
 
 > I'm still learning, so these projects are not presented as professional veterinary, clinical, emergency-response, or research services. I build them openly, test them hard, document what breaks, and keep improving them.
 
@@ -54,7 +54,7 @@ It began around Feline Hyperesthesia Syndrome and is growing toward a broader op
 
 - Building useful open-source tools for **animals, wildlife, conservation, and better scientific data**.
 - Learning enough **Cloud & DevOps** to deploy, maintain, secure, and monitor the things I build properly.
-- Making privacy and uncertainty part of the product design instead of bolting them on later.
+- Making uncertainty, provenance, and privacy part of the product design instead of afterthoughts.
 - Turning projects into software that real testers can actually install, use, break, and help improve.
 
 ## 🌱 What I'm Learning
@@ -76,18 +76,9 @@ It began around Feline Hyperesthesia Syndrome and is growing toward a broader op
 <img width="100%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=amgedi&theme=github_dark&bg_color=00000000&title_color=93AC80&text_color=DCE8D3&border_color=41523D&icon_color=A18463&chart_color=6F875F" alt="Amged's GitHub contribution summary" />
 
 <br/>
-
-<img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=amgedi&theme=github_dark&bg_color=00000000&title_color=93AC80&text_color=DCE8D3&border_color=41523D&icon_color=A18463&hide_logo=true" alt="Amged's GitHub stats" />
-<img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=amgedi&theme=github_dark&utcOffset=-6&bg_color=00000000&title_color=93AC80&text_color=DCE8D3&border_color=41523D&icon_color=A18463" alt="Amged's commit activity by time of day" />
-
-<br/>
 <br/>
 
-<sub><b>CONTRIBUTION STREAK</b></sub>
-
-<br/>
-
-<img width="72%" src="https://streak-stats.vercel.app?user=amgedi&theme=github-dark-blue&hide_border=false&background=0D1117&border=41523D&stroke=41523D&ring=6F875F&fire=A18463&currStreakNum=DCE8D3&sideNums=DCE8D3&currStreakLabel=93AC80&sideLabels=93AC80&dates=82917B" alt="Amged's GitHub contribution streak" />
+<img width="70%" src="https://streak-stats.vercel.app?user=amgedi&theme=github-dark-blue&hide_border=true&background=0D1117&stroke=41523D&ring=6F875F&fire=A18463&currStreakNum=DCE8D3&sideNums=DCE8D3&currStreakLabel=93AC80&sideLabels=93AC80&dates=82917B&card_width=720" alt="Amged's GitHub contribution streak" />
 
 </div>
 
@@ -96,28 +87,18 @@ It began around Feline Hyperesthesia Syndrome and is growing toward a broader op
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden-dark.svg?v=20261005" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden.svg?v=20261005" />
-  <img alt="Decorative animated contribution snake" src="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden.svg?v=20261005" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden-dark.svg?v=20261005-garden2" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden.svg?v=20261005-garden2" />
+  <img alt="Animated contribution snake with a sparse decorative garden" src="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden.svg?v=20261005-garden2" />
 </picture>
 
-<sub>The extra garden squares are decorative, but they sit on the snake's route so they get eaten too xD</sub>
+<sub>A few extra garden cells are mixed into the route so the snake gets some bonus snacks xD</sub>
 
 </div>
 
-## 🧭 Project Principles
+## 🧰 How I Build
 
-<p align="center">
-  <code>observe &gt; assume</code>&nbsp;&nbsp;•&nbsp;&nbsp;
-  <code>unknown ≠ no</code>&nbsp;&nbsp;•&nbsp;&nbsp;
-  <code>missing ≠ zero</code>
-  <br/>
-  <code>context ≠ cause</code>&nbsp;&nbsp;•&nbsp;&nbsp;
-  <code>privacy &gt; flashy AI</code>&nbsp;&nbsp;•&nbsp;&nbsp;
-  <code>open standards &gt; lock-in</code>
-</p>
-
-<p align="center"><sub>Keep uncertainty visible. Preserve context. Prefer useful, inspectable systems over magic-looking black boxes.</sub></p>
+Most of my projects start messy. I try to keep the original source intact, make uncertain things visible, keep important changes reversible, and choose tools I can actually understand and maintain.
 
 ## 💜 Support My Open-Source Work
 
