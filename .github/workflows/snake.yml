@@ -25,9 +25,10 @@ jobs:
             dist/github-contribution-garden.svg?color_snake=#58704F&color_dots=#F4F1E8,#C8D3BD,#93AC80,#6F875F,#3F5B3B
             dist/github-contribution-garden-dark.svg?palette=github-dark&color_snake=#6F875F&color_dots=#161B22,#2B382A,#3F5B3B,#58704F,#6F875F
 
-      - name: Add earthy snake gradient and edible garden squares
+      - name: Add earthy snake gradient and sparse edible garden squares
         shell: python
         run: |
+          from datetime import datetime, timezone
           from pathlib import Path
           import random
           import re
@@ -94,6 +95,8 @@ jobs:
 
               return route
 
+          daily_seed = datetime.now(timezone.utc).strftime("%Y%m%d")
+
           for filename, palette in files.items():
               path = Path(filename)
               svg = path.read_text(encoding="utf-8")
@@ -104,13 +107,21 @@ jobs:
                   for i, color in enumerate(palette["snake"])
               )
 
-              rng = random.Random(20260930)
+              # A daily seed keeps the garden playful without changing on every rerun.
+              rng = random.Random(f"{daily_seed}:{filename}")
               weights = [0.50, 0.28, 0.16, 0.06]
               garden_css = []
               garden_index = [0]
+              selected_cells = set()
+
+              def too_close(cell):
+                  x, y = cell
+                  return any(
+                      abs(x - sx) <= 16 and abs(y - sy) <= 16
+                      for sx, sy in selected_cells
+                  )
 
               def decorate(match):
-
                   rest = match.group("rest")
                   x_match = re.search(r'\bx="(\d+)"', rest)
                   y_match = re.search(r'\by="(\d+)"', rest)
@@ -122,11 +133,14 @@ jobs:
                   cell = (int(x_match.group(1)) - 2, int(y_match.group(1)) - 2)
                   eat_at = route_times.get(cell)
 
-                  # Only add decorative food where the generated snake actually travels.
-                  # That way every extra square the user sees really can be eaten.
-                  if eat_at is None or rng.random() > 0.56:
+                  # Keep decorative cells sparse and separated so they look like
+                  # scattered bonus food instead of outlining the snake's route.
+                  if eat_at is None:
+                      return match.group(0)
+                  if len(selected_cells) >= 28 or rng.random() > 0.24 or too_close(cell):
                       return match.group(0)
 
+                  selected_cells.add(cell)
                   color = rng.choices(palette["garden"], weights=weights, k=1)[0]
                   class_name = f"g{garden_index[0]}"
                   garden_index[0] += 1
