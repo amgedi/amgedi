@@ -1,31 +1,61 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="128" viewBox="0 0 1200 128" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="150" viewBox="0 0 1200 150" role="img" aria-labelledby="title desc">
   <title id="title">AMGED profile footer</title>
-  <desc id="desc">A translucent earthy footer with layered green and brown waves.</desc>
+  <desc id="desc">Animated translucent footer with earthy green and brown waves.</desc>
+
   <defs>
-    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#93AC80" stop-opacity=".1"/>
-      <stop offset="45%" stop-color="#6F875F" stop-opacity=".42"/>
-      <stop offset="100%" stop-color="#A18463" stop-opacity=".1"/>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#111A12" stop-opacity=".92"/>
+      <stop offset="48%" stop-color="#273A27" stop-opacity=".88"/>
+      <stop offset="100%" stop-color="#574B38" stop-opacity=".9"/>
     </linearGradient>
     <linearGradient id="waveA" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#1F2A1F" stop-opacity=".72"/>
-      <stop offset="48%" stop-color="#3F5B3B" stop-opacity=".58"/>
-      <stop offset="100%" stop-color="#A18463" stop-opacity=".48"/>
+      <stop offset="0%" stop-color="#3F5B3B" stop-opacity=".72"/>
+      <stop offset="48%" stop-color="#6F875F" stop-opacity=".54"/>
+      <stop offset="100%" stop-color="#A18463" stop-opacity=".50"/>
     </linearGradient>
     <linearGradient id="waveB" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#A18463" stop-opacity=".22"/>
-      <stop offset="55%" stop-color="#93AC80" stop-opacity=".22"/>
-      <stop offset="100%" stop-color="#F4F1E8" stop-opacity=".09"/>
+      <stop offset="0%" stop-color="#1F2A1F" stop-opacity=".86"/>
+      <stop offset="58%" stop-color="#58704F" stop-opacity=".54"/>
+      <stop offset="100%" stop-color="#C7B59C" stop-opacity=".24"/>
     </linearGradient>
+    <linearGradient id="waveC" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#A18463" stop-opacity=".16"/>
+      <stop offset="50%" stop-color="#93AC80" stop-opacity=".22"/>
+      <stop offset="100%" stop-color="#F4F1E8" stop-opacity=".08"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity=".07"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="outer">
+      <rect width="1200" height="150" rx="22"/>
+    </clipPath>
   </defs>
 
-  <rect x="42" y="12" width="1116" height="1" fill="url(#edge)"/>
-  <path d="M0 84 C190 42 350 108 566 70 C784 31 963 92 1200 48 L1200 128 L0 128 Z" fill="url(#waveA)"/>
-  <path d="M0 102 C225 66 386 116 620 91 C830 68 1001 111 1200 79 L1200 128 L0 128 Z" fill="url(#waveB)"/>
+  <g clip-path="url(#outer)">
+    <rect width="1200" height="150" fill="url(#base)"/>
 
-  <g transform="translate(380 31)">
-    <rect width="440" height="50" rx="25" fill="#FFFFFF" fill-opacity=".045" stroke="#D8E2D0" stroke-opacity=".14"/>
-    <text x="220" y="22" text-anchor="middle" fill="#F4F1E8" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1.8">BUILD • TEST • DOCUMENT • IMPROVE</text>
-    <text x="220" y="39" text-anchor="middle" fill="#C8D3BD" font-family="Arial, Helvetica, sans-serif" font-size="11" letter-spacing="1">open source • practical software • learning in public</text>
+    <path d="M-180 102 C70 56 260 123 502 83 C745 42 930 113 1380 56 L1380 160 L-180 160 Z" fill="url(#waveA)">
+      <animateTransform attributeName="transform" type="translate" values="-35 0;45 -4;-35 0" dur="12s" repeatCount="indefinite"/>
+    </path>
+    <path d="M-170 118 C85 83 315 132 568 105 C826 77 1030 127 1370 91 L1370 160 L-170 160 Z" fill="url(#waveB)">
+      <animateTransform attributeName="transform" type="translate" values="42 0;-48 4;42 0" dur="16s" repeatCount="indefinite"/>
+    </path>
+    <path d="M-190 134 C105 110 358 143 625 124 C902 104 1080 140 1390 113 L1390 160 L-190 160 Z" fill="url(#waveC)">
+      <animateTransform attributeName="transform" type="translate" values="-22 0;30 -2;-22 0" dur="18s" repeatCount="indefinite"/>
+    </path>
+
+    <rect x="32" y="22" width="1136" height="106" rx="24" fill="#FFFFFF" fill-opacity=".035" stroke="#E8E3D8" stroke-opacity=".11"/>
+
+    <g transform="translate(350 46)">
+      <rect width="500" height="59" rx="29.5" fill="#0D1510" fill-opacity=".34" stroke="#D8E2D0" stroke-opacity=".16"/>
+      <text x="250" y="25" text-anchor="middle" fill="#F4F1E8" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" letter-spacing="2">BUILD • TEST • DOCUMENT • IMPROVE</text>
+      <text x="250" y="43" text-anchor="middle" fill="#C8D3BD" font-family="Arial, Helvetica, sans-serif" font-size="11" letter-spacing="1">open source • practical software • learning in public</text>
+    </g>
+
+    <rect x="-360" y="-65" width="220" height="300" fill="url(#shine)" transform="rotate(14 0 0)" opacity=".6">
+      <animate attributeName="x" values="-360;1420" dur="12s" repeatCount="indefinite"/>
+    </rect>
   </g>
 </svg>
