@@ -14,9 +14,9 @@
 
 I'm **Amged**. I'm learning software development by building real open-source projects around animals, conservation, research-friendly data, and practical field workflows.
 
-I like projects where the software has to deal with messy information, uncertainty, real users, and real constraints. Along the way I'm learning **Cloud, DevOps, Linux, Git/GitHub, Python, TypeScript, desktop development, and computer vision**.
+I like projects where the software needs help in dealing with messy information, uncertainty, and real constraints that may lack in wherever field it's located in. (Hopefully i'll learn cloud, devOps, linux, git/gitHub, py, ts, desktop dev, and computer vision by the time i'm done!**.
 
-> I'm still learning, so these projects are not presented as professional veterinary, clinical, emergency-response, or research services. I build them openly, test them hard, document what breaks, and keep improving them.
+> I'm still learning, so these projects are not presented as professional veterinary, clinical, emergency-response, or research services. I build them openly, test them hard, document what breaks, and keep improving them with proper testing i'm always available for contact!
 
 ## 🌿 Featured Projects
 
@@ -24,7 +24,7 @@ I like projects where the software has to deal with messy information, uncertain
 <tr>
 <td width="50%" valign="top">
 
-### 🐾 Wildlife Incident Handoff
+### 🌲 Wildlife Incident Handoff
 
 **Clear information. Safer handoffs.**
 
