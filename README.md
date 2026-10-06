@@ -87,9 +87,9 @@ It began around Feline Hyperesthesia Syndrome and is growing toward a broader op
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden-dark.svg?v=20261006-garden3" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden.svg?v=20261006-garden3" />
-  <img alt="Animated contribution snake with a randomized earthy garden" src="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden.svg?v=20261006-garden3" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden-dark.svg?v=20261006-garden4" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden.svg?v=20261006-garden4" />
+  <img alt="Animated contribution snake with a randomized earthy garden" src="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden.svg?v=20261006-garden4" />
 </picture>
 
 <sub>Bonus garden cells reshuffle between snake rounds, mixing sage greens and earthy browns for extra snacks xD</sub>
