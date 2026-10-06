@@ -22,25 +22,31 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-contribution-garden.svg?color_snake=#58704F&color_dots=#F4F1E8,#C8D3BD,#93AC80,#6F875F,#3F5B3B
-            dist/github-contribution-garden-dark.svg?palette=github-dark&color_snake=#6F875F&color_dots=#161B22,#2B382A,#3F5B3B,#58704F,#6F875F
+            dist/github-contribution-garden.svg?color_snake=#58704F&color_dots=#F4F1E8,#D8C3A5,#A18463,#6F875F,#3F5B3B
+            dist/github-contribution-garden-dark.svg?palette=github-dark&color_snake=#6F875F&color_dots=#161B22,#3A2B22,#6E4B32,#58704F,#7F986F
 
-      - name: Add earthy snake gradient and sparse edible garden squares
+      - name: Add earthy snake gradient and randomized edible garden rounds
         shell: python
         run: |
           from datetime import datetime, timezone
           from pathlib import Path
+          import os
           import random
           import re
 
+          # The contribution cells themselves now move through an earthy
+          # brown -> olive/green palette. Bonus garden cells use both color
+          # families so the board is not green-only.
           files = {
               "dist/github-contribution-garden.svg": {
                   "snake": ["#93AC80", "#6F875F", "#58704F", "#3F5B3B"],
-                  "garden": ["#C8D3BD", "#93AC80", "#6F875F", "#3F5B3B"],
+                  "garden_green": ["#C8D3BD", "#A8BB96", "#7F966B", "#58704F"],
+                  "garden_brown": ["#D8C3A5", "#C09A6B", "#9A7048", "#6E4B32"],
               },
               "dist/github-contribution-garden-dark.svg": {
                   "snake": ["#A8B89A", "#7F986F", "#58704F", "#32442F"],
-                  "garden": ["#2B382A", "#3F5B3B", "#58704F", "#6F875F"],
+                  "garden_green": ["#31402F", "#465A40", "#5F7854", "#7F986F"],
+                  "garden_brown": ["#3A2B22", "#5B4030", "#7B563A", "#A07850"],
               },
           }
 
@@ -53,6 +59,10 @@ jobs:
               r'(?P<times>[^{}]+)\{transform:translate\('
               r'(?P<x>-?\d+(?:\.\d+)?)px,'
               r'(?P<y>-?\d+(?:\.\d+)?)px\)\}'
+          )
+          cell_duration = re.compile(
+              r'\.c\{[^}]*animation:none\s+(?P<ms>\d+)ms',
+              re.DOTALL,
           )
 
           def snake_route_times(svg):
@@ -95,66 +105,154 @@ jobs:
 
               return route
 
-          daily_seed = datetime.now(timezone.utc).strftime("%Y%m%d")
+          def blank_route_cells(svg, route_times):
+              cells = []
+              for match in blank_cell.finditer(svg):
+                  rest = match.group("rest")
+                  x_match = re.search(r'\bx="(\d+)"', rest)
+                  y_match = re.search(r'\by="(\d+)"', rest)
+                  if not x_match or not y_match:
+                      continue
+
+                  # Generated rectangles are inset by 2px while the snake
+                  # itself moves on a 16px grid.
+                  cell = (int(x_match.group(1)) - 2, int(y_match.group(1)) - 2)
+                  if cell in route_times:
+                      cells.append(cell)
+              return cells
+
+          def select_round(candidates, rng, limit=24):
+              pool = candidates[:]
+              rng.shuffle(pool)
+              selected = []
+
+              def too_close(cell):
+                  x, y = cell
+                  return any(
+                      abs(x - sx) <= 16 and abs(y - sy) <= 16
+                      for sx, sy in selected
+                  )
+
+              for cell in pool:
+                  if len(selected) >= limit:
+                      break
+                  if too_close(cell):
+                      continue
+                  selected.append(cell)
+
+              return selected
+
+          def build_keyframes(class_name, schedule, rounds, total_ms):
+              span = 100.0 / rounds
+              # Tiny transition windows make color changes effectively instant
+              # without relying on script execution inside GitHub's SVG viewer.
+              epsilon = min(0.008, span / 500.0)
+              events = {0.0: "var(--ce)", 100.0: "var(--ce)"}
+
+              for round_index, eat_at, color in schedule:
+                  start = round_index * span
+                  end = (round_index + 1) * span
+                  eat = start + (eat_at / 100.0) * span
+
+                  if start <= 0.0:
+                      events[0.0] = color
+                  else:
+                      events[max(0.0, start - epsilon)] = "var(--ce)"
+                      events[start] = color
+
+                  events[max(start, eat)] = color
+                  events[min(end - epsilon, eat + epsilon)] = "var(--ce)"
+                  events[end] = "var(--ce)"
+
+              frames = "".join(
+                  f"{pct:.4f}%{{fill:{value}}}"
+                  for pct, value in sorted(events.items())
+              )
+              return (
+                  f"@keyframes {class_name}{{{frames}}}"
+                  f".c.{class_name}{{fill:var(--ce);animation-name:{class_name};"
+                  f"animation-duration:{total_ms}ms}}"
+              )
+
+          # Static SVG cannot execute JavaScript for true infinite randomness on
+          # GitHub. Instead, each file contains twelve independently randomized
+          # snake rounds before the garden pattern repeats. Every workflow run
+          # also gets a fresh seed, so the next generated SVG has a new cycle.
+          round_count = 12
+          run_seed = (
+              os.environ.get("GITHUB_RUN_ID")
+              or datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
+          )
+          run_attempt = os.environ.get("GITHUB_RUN_ATTEMPT", "1")
 
           for filename, palette in files.items():
               path = Path(filename)
               svg = path.read_text(encoding="utf-8")
               route_times = snake_route_times(svg)
+              candidates = blank_route_cells(svg, route_times)
+
+              duration_match = cell_duration.search(svg)
+              if not duration_match:
+                  raise RuntimeError("Could not determine the generated snake duration")
+              base_ms = int(duration_match.group("ms"))
+              total_ms = base_ms * round_count
 
               snake_overrides = "".join(
                   f".s.s{i}{{fill:{color}}}"
                   for i, color in enumerate(palette["snake"])
               )
 
-              # A daily seed keeps the garden playful without changing on every rerun.
-              rng = random.Random(f"{daily_seed}:{filename}")
-              weights = [0.50, 0.28, 0.16, 0.06]
-              garden_css = []
-              garden_index = [0]
-              selected_cells = set()
+              schedules = {}
+              # Keep geometry synchronized between light/dark files, while the
+              # actual shades come from each theme's own palette.
+              shared_seed_name = Path(filename).name.replace("-dark", "")
 
-              def too_close(cell):
-                  x, y = cell
-                  return any(
-                      abs(x - sx) <= 16 and abs(y - sy) <= 16
-                      for sx, sy in selected_cells
+              for round_index in range(round_count):
+                  rng = random.Random(
+                      f"{run_seed}:{run_attempt}:{shared_seed_name}:round:{round_index}"
+                  )
+                  selected = select_round(candidates, rng, limit=24)
+
+                  # Guarantee a visible brown presence every round instead of
+                  # leaving it to chance: roughly 40% brown, 60% green.
+                  families = ["brown"] * round(len(selected) * 0.40)
+                  families += ["green"] * (len(selected) - len(families))
+                  rng.shuffle(families)
+
+                  shade_weights = [0.42, 0.30, 0.19, 0.09]
+                  for cell, family in zip(selected, families):
+                      colors = palette[f"garden_{family}"]
+                      color = rng.choices(colors, weights=shade_weights, k=1)[0]
+                      schedules.setdefault(cell, []).append(
+                          (round_index, route_times[cell], color)
+                      )
+
+              class_by_cell = {}
+              garden_css = []
+
+              for index, cell in enumerate(sorted(schedules)):
+                  class_name = f"g{index}"
+                  class_by_cell[cell] = class_name
+                  garden_css.append(
+                      build_keyframes(
+                          class_name,
+                          schedules[cell],
+                          round_count,
+                          total_ms,
+                      )
                   )
 
               def decorate(match):
                   rest = match.group("rest")
                   x_match = re.search(r'\bx="(\d+)"', rest)
                   y_match = re.search(r'\by="(\d+)"', rest)
-
                   if not x_match or not y_match:
                       return match.group(0)
 
-                  # Rectangles are inset by 2px; the snake moves on a 16px grid.
                   cell = (int(x_match.group(1)) - 2, int(y_match.group(1)) - 2)
-                  eat_at = route_times.get(cell)
-
-                  # Keep decorative cells sparse and separated so they look like
-                  # scattered bonus food instead of outlining the snake's route.
-                  if eat_at is None:
+                  class_name = class_by_cell.get(cell)
+                  if not class_name:
                       return match.group(0)
-                  if len(selected_cells) >= 28 or rng.random() > 0.24 or too_close(cell):
-                      return match.group(0)
-
-                  selected_cells.add(cell)
-                  color = rng.choices(palette["garden"], weights=weights, k=1)[0]
-                  class_name = f"g{garden_index[0]}"
-                  garden_index[0] += 1
-
-                  before = max(0.0, min(99.98, eat_at))
-                  after = min(100.0, before + 0.02)
-
-                  garden_css.append(
-                      f"@keyframes {class_name}{{"
-                      f"0%,{before:.2f}%{{fill:{color}}}"
-                      f"{after:.2f}%,100%{{fill:var(--ce)}}"
-                      f"}}"
-                      f".c.{class_name}{{fill:{color};animation-name:{class_name}}}"
-                  )
 
                   return f'<rect class="c {class_name}"{rest}/>'
 
