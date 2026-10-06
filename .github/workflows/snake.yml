@@ -22,8 +22,8 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-contribution-garden.svg?color_snake=#58704F&color_dots=#F4F1E8,#D8C3A5,#A18463,#6F875F,#3F5B3B
-            dist/github-contribution-garden-dark.svg?palette=github-dark&color_snake=#6F875F&color_dots=#161B22,#3A2B22,#6E4B32,#58704F,#7F986F
+            dist/github-contribution-garden.svg?color_snake=#58704F&color_dots=#F4F1E8,#DDBF98,#B47C52,#7F8C5B,#4F6A45
+            dist/github-contribution-garden-dark.svg?palette=github-dark&color_snake=#6F875F&color_dots=#161B22,#4C3024,#80543A,#5C704B,#839B71
 
       - name: Add earthy snake gradient and randomized edible garden rounds
         shell: python
@@ -34,19 +34,16 @@ jobs:
           import random
           import re
 
-          # The contribution cells themselves now move through an earthy
-          # brown -> olive/green palette. Bonus garden cells use both color
-          # families so the board is not green-only.
           files = {
               "dist/github-contribution-garden.svg": {
-                  "snake": ["#93AC80", "#6F875F", "#58704F", "#3F5B3B"],
-                  "garden_green": ["#C8D3BD", "#A8BB96", "#7F966B", "#58704F"],
-                  "garden_brown": ["#D8C3A5", "#C09A6B", "#9A7048", "#6E4B32"],
+                  "snake": ["#A8BB96", "#7F966B", "#58704F", "#3F5B3B"],
+                  "garden_green": ["#D6DEC8", "#A8BB96", "#7F966B", "#58704F"],
+                  "garden_brown": ["#E0C29A", "#C48A5A", "#9A613B", "#6E402A"],
               },
               "dist/github-contribution-garden-dark.svg": {
                   "snake": ["#A8B89A", "#7F986F", "#58704F", "#32442F"],
-                  "garden_green": ["#31402F", "#465A40", "#5F7854", "#7F986F"],
-                  "garden_brown": ["#3A2B22", "#5B4030", "#7B563A", "#A07850"],
+                  "garden_green": ["#354731", "#4E6446", "#6D875E", "#8AA078"],
+                  "garden_brown": ["#4C3024", "#704832", "#98623F", "#C08A5A"],
               },
           }
 
@@ -114,14 +111,17 @@ jobs:
                   if not x_match or not y_match:
                       continue
 
-                  # Generated rectangles are inset by 2px while the snake
-                  # itself moves on a 16px grid.
+                  # Rectangles are inset by 2px while the snake moves on a
+                  # 16px grid. Avoid the very beginning/end of the snake route:
+                  # those cells are eaten almost immediately or during the reset
+                  # sweep and looked like invisible collisions rather than food.
                   cell = (int(x_match.group(1)) - 2, int(y_match.group(1)) - 2)
-                  if cell in route_times:
+                  eat_at = route_times.get(cell)
+                  if eat_at is not None and 8.0 <= eat_at <= 88.0:
                       cells.append(cell)
               return cells
 
-          def select_round(candidates, rng, limit=24):
+          def select_round(candidates, rng, limit=18):
               pool = candidates[:]
               rng.shuffle(pool)
               selected = []
@@ -144,26 +144,40 @@ jobs:
 
           def build_keyframes(class_name, schedule, rounds, total_ms):
               span = 100.0 / rounds
-              # Tiny transition windows make color changes effectively instant
-              # without relying on script execution inside GitHub's SVG viewer.
-              epsilon = min(0.008, span / 500.0)
-              events = {0.0: "var(--ce)", 100.0: "var(--ce)"}
+              epsilon = min(0.012, span / 300.0)
+              selected_by_round = {
+                  round_index: (eat_at, color)
+                  for round_index, eat_at, color in schedule
+              }
+              events = {}
 
-              for round_index, eat_at, color in schedule:
+              # Explicitly define EVERY round for every decorated cell. The old
+              # version only emitted keyframes for rounds where a cell happened
+              # to be selected, so CSS interpolated through the gaps and created
+              # faint/ghost food. Using step timing + explicit blank baselines
+              # means a bonus is either clearly visible or truly absent.
+              for round_index in range(rounds):
                   start = round_index * span
                   end = (round_index + 1) * span
-                  eat = start + (eat_at / 100.0) * span
-
-                  if start <= 0.0:
-                      events[0.0] = color
-                  else:
-                      events[max(0.0, start - epsilon)] = "var(--ce)"
-                      events[start] = color
-
-                  events[max(start, eat)] = color
-                  events[min(end - epsilon, eat + epsilon)] = "var(--ce)"
+                  events[start] = "var(--ce)"
+                  events[max(start, end - epsilon)] = "var(--ce)"
                   events[end] = "var(--ce)"
 
+                  selected = selected_by_round.get(round_index)
+                  if selected is None:
+                      continue
+
+                  eat_at, color = selected
+                  eat = start + (eat_at / 100.0) * span
+                  eat = max(start + epsilon, min(end - 2 * epsilon, eat))
+
+                  # Food is visible from the beginning of the snake round until
+                  # the head reaches it, then disappears immediately as if eaten.
+                  events[start] = color
+                  events[eat] = color
+                  events[min(end - epsilon, eat + epsilon)] = "var(--ce)"
+
+              events[100.0] = "var(--ce)"
               frames = "".join(
                   f"{pct:.4f}%{{fill:{value}}}"
                   for pct, value in sorted(events.items())
@@ -171,13 +185,15 @@ jobs:
               return (
                   f"@keyframes {class_name}{{{frames}}}"
                   f".c.{class_name}{{fill:var(--ce);animation-name:{class_name};"
-                  f"animation-duration:{total_ms}ms}}"
+                  f"animation-duration:{total_ms}ms;animation-timing-function:steps(1,end);"
+                  f"animation-iteration-count:infinite}}"
               )
 
-          # Static SVG cannot execute JavaScript for true infinite randomness on
-          # GitHub. Instead, each file contains twelve independently randomized
-          # snake rounds before the garden pattern repeats. Every workflow run
-          # also gets a fresh seed, so the next generated SVG has a new cycle.
+          # A static SVG cannot execute JavaScript for fresh infinite randomness
+          # on GitHub. Instead it contains twelve independently randomized garden
+          # layouts. Each snake loop advances to the next layout; after twelve
+          # rounds the sequence repeats. A workflow regeneration creates a fresh
+          # twelve-round sequence.
           round_count = 12
           run_seed = (
               os.environ.get("GITHUB_RUN_ID")
@@ -203,23 +219,23 @@ jobs:
               )
 
               schedules = {}
-              # Keep geometry synchronized between light/dark files, while the
-              # actual shades come from each theme's own palette.
               shared_seed_name = Path(filename).name.replace("-dark", "")
 
               for round_index in range(round_count):
                   rng = random.Random(
                       f"{run_seed}:{run_attempt}:{shared_seed_name}:round:{round_index}"
                   )
-                  selected = select_round(candidates, rng, limit=24)
+                  selected = select_round(candidates, rng, limit=18)
 
-                  # Guarantee a visible brown presence every round instead of
-                  # leaving it to chance: roughly 40% brown, 60% green.
-                  families = ["brown"] * round(len(selected) * 0.40)
-                  families += ["green"] * (len(selected) - len(families))
+                  # Make the brown family impossible to miss: exactly half of
+                  # each round's bonus cells use brown shades, half use greens.
+                  brown_count = len(selected) // 2
+                  families = ["brown"] * brown_count
+                  families += ["green"] * (len(selected) - brown_count)
                   rng.shuffle(families)
 
-                  shade_weights = [0.42, 0.30, 0.19, 0.09]
+                  # Favor middle shades; very pale/dark colors remain accents.
+                  shade_weights = [0.20, 0.38, 0.30, 0.12]
                   for cell, family in zip(selected, families):
                       colors = palette[f"garden_{family}"]
                       color = rng.choices(colors, weights=shade_weights, k=1)[0]
