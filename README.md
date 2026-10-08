@@ -13,11 +13,11 @@
 
 ## 👋 About Me
 
-I'm **Amged**. I'm learning software development by building real open-source projects around animals, conservation, research-friendly data, and practical field workflows.
+Hello!! I've been trying to learning by building real open source projects around animals, conservation, research friendly data, and practical field workflows.
 
-I like projects where the software needs help in dealing with messy information, uncertainty, and real constraints that may lack in wherever field it's located in. (Hopefully i'll learn cloud, devOps, linux, git/gitHub, py, ts, desktop dev, and computer vision by the time i'm done!**.
+I love projects where the software needs help in dealing with messy information, uncertainty, and real constraints that may lack in wherever field it's located in. **(& Hopefully i would've learned cloud, devOps, linux, git/gitHub, py, ts, desktop dev, and computer vision by the time i'm done!)**.
 
-> I'm still learning, so these projects are not presented as professional veterinary, clinical, emergency-response, or research services. I build them openly, test them hard, document what breaks, and keep improving them with proper testing i'm always available for contact!
+> I'm still learning, so these projects are not presented as professional veterinary, clinical, emergency response, or research services. I build them openly, test them hard, document what breaks, and keep improving them with proper testing. I'm always available for contact!
 
 ## 🌿 Featured Projects
 
