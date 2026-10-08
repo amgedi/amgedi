@@ -4,6 +4,7 @@
 
 <br/>
 
+[![Biodiversity Data Rescue Workbench](https://img.shields.io/badge/Biodiversity_Data_Rescue_Workbench-Explore-4F7652?style=for-the-badge&logo=github)](https://github.com/amgedi/Biodiversity-Data-Rescue-Workbench)
 [![Wildlife Incident Handoff](https://img.shields.io/badge/Wildlife_Incident_Handoff-Explore-3C6E62?style=for-the-badge&logo=github)](https://github.com/amgedi/Wildlife-Incident-Handoff)
 [![OpenFHS](https://img.shields.io/badge/OpenFHS-Explore-58704F?style=for-the-badge&logo=github)](https://github.com/amgedi/OpenFHS)
 [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-876B52?style=for-the-badge&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/amgedi)
@@ -45,6 +46,26 @@ It began around Feline Hyperesthesia Syndrome and is growing toward a broader op
 
 [![Repository](https://img.shields.io/badge/Repository-263226?style=flat-square&logo=github)](https://github.com/amgedi/OpenFHS)
 [![Latest Release](https://img.shields.io/github/v/release/amgedi/OpenFHS?include_prereleases&style=flat-square&color=6F875F)](https://github.com/amgedi/OpenFHS/releases)
+
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td width="100%" valign="top">
+
+### 🌿 Biodiversity Data Rescue Workbench
+
+**Preserve the evidence. Investigate the mess. Rescue the data.**
+
+A local-first open-source desktop workbench for preserving, investigating, repairing, validating, and documenting messy or legacy biodiversity datasets while keeping originals, provenance, and uncertainty visible.
+
+The first public release, **v0.7.0**, includes source preservation, extraction inspection, evidence-aware investigation, repair previews, validation workflows, guided tutorials, Bio Buddy, modern drag-and-drop imports, and a native Windows launcher with explicit runtime selection and local rollback support.
+
+[![Repository](https://img.shields.io/badge/Repository-263226?style=flat-square&logo=github)](https://github.com/amgedi/Biodiversity-Data-Rescue-Workbench)
+[![Latest Release](https://img.shields.io/github/v/release/amgedi/Biodiversity-Data-Rescue-Workbench?style=flat-square&color=6F875F)](https://github.com/amgedi/Biodiversity-Data-Rescue-Workbench/releases/latest)
+[![License](https://img.shields.io/github/license/amgedi/Biodiversity-Data-Rescue-Workbench?style=flat-square&color=A18463)](https://github.com/amgedi/Biodiversity-Data-Rescue-Workbench/blob/main/LICENSE)
 
 </td>
 </tr>
