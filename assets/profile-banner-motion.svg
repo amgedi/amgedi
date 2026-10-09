@@ -9,7 +9,7 @@
       <stop offset="0%" stop-color="#FFFFFF" stop-opacity=".085"/><stop offset="55%" stop-color="#E8E3D8" stop-opacity=".035"/><stop offset="100%" stop-color="#A18463" stop-opacity=".055"/>
     </linearGradient>
     <linearGradient id="lineGlow" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#93AC80" stop-opacity="0"/><stop offset="35%" stop-color="#93AC80" stop-opacity=".9"/><stop offset="65%" stop-color="#D8E2D0" stop-opacity=".95"/><stop offset="100%" stop-color="#A18463" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#93AC80" stop-opacity=".15"/><stop offset="35%" stop-color="#93AC80" stop-opacity=".9"/><stop offset="65%" stop-color="#D8E2D0" stop-opacity=".95"/><stop offset="100%" stop-color="#A18463" stop-opacity=".25"/>
     </linearGradient>
     <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="50%" stop-color="#FFFFFF" stop-opacity=".09"/><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
@@ -17,6 +17,7 @@
     <radialGradient id="greenGlow"><stop offset="0%" stop-color="#93AC80" stop-opacity=".28"/><stop offset="100%" stop-color="#93AC80" stop-opacity="0"/></radialGradient>
     <radialGradient id="warmGlow"><stop offset="0%" stop-color="#D0B18A" stop-opacity=".24"/><stop offset="100%" stop-color="#D0B18A" stop-opacity="0"/></radialGradient>
     <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="34"/></filter>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.2"/></filter>
     <clipPath id="outer"><rect width="1200" height="260" rx="30"/></clipPath>
   </defs>
   <g clip-path="url(#outer)">
@@ -26,23 +27,57 @@
     <path d="M-120 204 C120 151 315 226 535 188 C760 149 955 208 1320 137" fill="none" stroke="#D8E2D0" stroke-opacity=".09" stroke-width="1.2"><animateTransform attributeName="transform" type="translate" values="-22 0;30 -4;-22 0" dur="12s" repeatCount="indefinite"/></path>
     <path d="M-150 225 C100 183 350 250 605 207 C835 169 1050 227 1330 178" fill="none" stroke="#A18463" stroke-opacity=".13" stroke-width="1.35"><animateTransform attributeName="transform" type="translate" values="25 0;-28 5;25 0" dur="16s" repeatCount="indefinite"/></path>
     <path d="M-90 239 C165 205 385 249 630 227 C905 202 1060 236 1290 215" fill="none" stroke="#93AC80" stroke-opacity=".075" stroke-width="1"><animateTransform attributeName="transform" type="translate" values="-15 0;18 -2;-15 0" dur="18s" repeatCount="indefinite"/></path>
+
     <rect x="27" y="25" width="1146" height="210" rx="26" fill="url(#glass)" stroke="#E8E3D8" stroke-opacity=".15"/>
     <rect x="28" y="26" width="1144" height="1" rx="1" fill="#FFFFFF" fill-opacity=".18"/>
+
     <g text-anchor="middle" font-family="Arial, Helvetica, sans-serif">
-      <text x="600" y="82" fill="#F4F1E8" font-size="52" font-weight="700" letter-spacing="5">AMGED</text>
-      <text x="600" y="120" fill="#E8E3D8" font-size="21" font-weight="600">Building practical open-source software</text>
-      <text x="600" y="151" fill="#D8E2D0" font-size="17.5">Wildlife • Conservation • Better Data • Cloud &amp; DevOps</text>
+      <text x="600" y="80" fill="#F4F1E8" font-size="51" font-weight="700" letter-spacing="5">AMGED</text>
+      <text x="600" y="118" fill="#E8E3D8" font-size="21" font-weight="600">Building practical open-source software</text>
+      <text x="600" y="149" fill="#D8E2D0" font-size="17.5">Wildlife • Conservation • Better Data • Cloud &amp; DevOps</text>
     </g>
-    <g transform="translate(280 172)" font-family="Arial, Helvetica, sans-serif">
-      <rect width="640" height="45" rx="22.5" fill="#0B120D" fill-opacity=".30" stroke="#E8E3D8" stroke-opacity=".14"/>
-      <text x="22" y="18" fill="#C8D3BD" font-size="10.5" font-weight="700" letter-spacing="1.35">BUILD • TEST • SHIP</text>
-      <text x="22" y="33" fill="#F4F1E8" font-size="11.5" font-weight="600">LEARN • ITERATE • IMPROVE</text>
-      <g transform="translate(282 12)">
-        <path d="M0 13 C30 -3 60 23 92 9 C126 -6 154 20 188 7 C220 -4 252 14 292 4" fill="none" stroke="#D8E2D0" stroke-opacity=".20" stroke-width="2"/>
-        <path d="M0 13 C30 -3 60 23 92 9 C126 -6 154 20 188 7 C220 -4 252 14 292 4" fill="none" stroke="url(#lineGlow)" stroke-width="2.3" stroke-linecap="round" stroke-dasharray="28 62"><animate attributeName="stroke-dashoffset" values="0;-180" dur="5.5s" repeatCount="indefinite"/></path>
-        <circle cx="0" cy="13" r="4" fill="#93AC80"/><circle cx="92" cy="9" r="4" fill="#A18463"/><circle cx="188" cy="7" r="4" fill="#D8E2D0"/><circle cx="292" cy="4" r="4" fill="#6F875F"/>
+
+    <g transform="translate(245 169)" font-family="Arial, Helvetica, sans-serif">
+      <rect width="710" height="49" rx="24.5" fill="#0B120D" fill-opacity=".30" stroke="#E8E3D8" stroke-opacity=".14"/>
+      <text x="24" y="20" fill="#C8D3BD" font-size="10.5" font-weight="700" letter-spacing="1.35">BUILD • TEST • SHIP</text>
+      <text x="24" y="36" fill="#F4F1E8" font-size="11.5" font-weight="600">LEARN • ITERATE • IMPROVE</text>
+
+      <g transform="translate(438 8)">
+        <path d="M16 16 H202" fill="none" stroke="#D8E2D0" stroke-opacity=".16" stroke-width="2"/>
+        <path d="M16 16 H202" fill="none" stroke="url(#lineGlow)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="24 38"><animate attributeName="stroke-dashoffset" values="0;-124" dur="5.2s" repeatCount="indefinite"/></path>
+
+        <g>
+          <circle cx="16" cy="16" r="15" fill="#152019" stroke="#93AC80" stroke-opacity=".60"/>
+          <ellipse cx="16" cy="19.7" rx="5.3" ry="4.2" fill="#A8BB96"/>
+          <circle cx="9.3" cy="13.2" r="2.15" fill="#A8BB96"/>
+          <circle cx="13.7" cy="9.8" r="2.15" fill="#A8BB96"/>
+          <circle cx="18.7" cy="9.8" r="2.15" fill="#A8BB96"/>
+          <circle cx="23" cy="13.2" r="2.15" fill="#A8BB96"/>
+        </g>
+
+        <g transform="translate(62 0)">
+          <circle cx="16" cy="16" r="15" fill="#1B1A15" stroke="#D0B18A" stroke-opacity=".62"/>
+          <path d="M9.5 13 L10.8 8.3 L14.1 11.2 C15.3 10.8 16.8 10.8 18 11.2 L21.3 8.3 L22.5 13 C23.2 14 23.5 15.4 23.5 16.9 C23.5 21.2 20.3 24 16 24 C11.7 24 8.5 21.2 8.5 16.9 C8.5 15.4 8.8 14 9.5 13 Z" fill="none" stroke="#D9BE99" stroke-width="1.55" stroke-linejoin="round"/>
+          <circle cx="13.3" cy="17" r=".95" fill="#D9BE99"/><circle cx="18.7" cy="17" r=".95" fill="#D9BE99"/>
+          <path d="M14.5 20 C15.4 20.7 16.6 20.7 17.5 20" fill="none" stroke="#D9BE99" stroke-width="1.1" stroke-linecap="round"/>
+        </g>
+
+        <g transform="translate(124 0)">
+          <circle cx="16" cy="16" r="15" fill="#142017" stroke="#7F986F" stroke-opacity=".62"/>
+          <path d="M9.5 21.5 C9.5 13 14.6 8.7 23.3 8.5 C22.9 17 18.6 21.9 9.5 21.5 Z" fill="none" stroke="#9EB38D" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M10.5 21 C13.6 17.5 16.6 14.7 21.8 10.3" fill="none" stroke="#9EB38D" stroke-width="1.4" stroke-linecap="round"/>
+        </g>
+
+        <g transform="translate(186 0)">
+          <circle cx="16" cy="16" r="15" fill="#181A17" stroke="#D8E2D0" stroke-opacity=".55"/>
+          <path d="M10 20.3 H22.4 C24.3 20.3 25.7 18.9 25.7 17.2 C25.7 15.4 24.2 14 22.3 14 C21.7 11.2 19.4 9.3 16.5 9.3 C13.6 9.3 11.2 11.3 10.6 14.1 C8.4 14.2 6.7 15.6 6.7 17.4 C6.7 19 8.1 20.3 10 20.3 Z" fill="none" stroke="#D8E2D0" stroke-width="1.55" stroke-linejoin="round"/>
+          <path d="M12.3 16.1 L14.4 18.1 L19.8 13" fill="none" stroke="#93AC80" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+
+        <circle cx="16" cy="16" r="18" fill="#93AC80" opacity=".10" filter="url(#soft)"><animate attributeName="opacity" values=".03;.15;.03" dur="4.8s" repeatCount="indefinite"/></circle>
       </g>
     </g>
+
     <rect x="-430" y="-95" width="250" height="445" fill="url(#shine)" transform="rotate(18 0 0)" opacity=".64"><animate attributeName="x" values="-430;1430" dur="10.5s" repeatCount="indefinite"/></rect>
   </g>
 </svg>
