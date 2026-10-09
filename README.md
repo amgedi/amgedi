@@ -94,11 +94,6 @@ The first public release, **v0.7.0**, includes source preservation, extraction i
 
 <div align="center">
 
-<img width="100%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=amgedi&theme=github_dark&bg_color=00000000&title_color=93AC80&text_color=DCE8D3&border_color=41523D&icon_color=A18463&chart_color=6F875F" alt="Amged's GitHub contribution summary" />
-
-<br/>
-<br/>
-
 <img width="70%" src="https://streak-stats.vercel.app?user=amgedi&theme=github-dark-blue&hide_border=true&background=0D1117&stroke=41523D&ring=6F875F&fire=A18463&currStreakNum=DCE8D3&sideNums=DCE8D3&currStreakLabel=93AC80&sideLabels=93AC80&dates=82917B&card_width=720" alt="Amged's GitHub contribution streak" />
 
 </div>
