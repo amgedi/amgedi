@@ -5,6 +5,7 @@
 <br/>
 
 [![Biodiversity Data Rescue Workbench](https://img.shields.io/badge/Biodiversity_Data_Rescue_Workbench-Explore-4F7652?style=for-the-badge&logo=github)](https://github.com/amgedi/Biodiversity-Data-Rescue-Workbench)
+[![Profile Customization Studio](https://img.shields.io/badge/Profile_Customization_Studio-Explore-6B5D73?style=for-the-badge&logo=github)](https://github.com/amgedi/Profile-Customization-Studio)
 [![Wildlife Incident Handoff](https://img.shields.io/badge/Wildlife_Incident_Handoff-Explore-3C6E62?style=for-the-badge&logo=github)](https://github.com/amgedi/Wildlife-Incident-Handoff)
 [![OpenFHS](https://img.shields.io/badge/OpenFHS-Explore-58704F?style=for-the-badge&logo=github)](https://github.com/amgedi/OpenFHS)
 [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-876B52?style=for-the-badge&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/amgedi)
@@ -15,7 +16,7 @@
 
 ## 👋 About Me
 
-Hello!! I've been learning by building real open-source projects around animals, conservation, research-friendly data, and practical field workflows.
+Hello!! I've been learning by building real open-source projects around animals, conservation, research-friendly data, practical field workflows, and creative developer tools.
 
 I like projects where the software has to deal with messy information, uncertainty, privacy, and real-world constraints instead of pretending everything arrives perfectly clean. **Hopefully by the time I'm done I'll have learned a ridiculous amount of cloud, DevOps, Linux, Git/GitHub, Python, TypeScript, desktop development, and computer vision too xD.**
 
@@ -74,7 +75,7 @@ It began around Feline Hyperesthesia Syndrome and is growing toward a broader op
 
 <table>
 <tr>
-<td width="100%" valign="top">
+<td width="50%" valign="top">
 
 ### 🌿 Biodiversity Data Rescue Workbench
 
@@ -96,6 +97,26 @@ The first public release, **v0.7.0**, includes source preservation, extraction i
 [![Security](https://img.shields.io/badge/Security-Policy-725D45?style=flat-square&logo=github)](https://github.com/amgedi/Biodiversity-Data-Rescue-Workbench/blob/main/SECURITY.md)
 
 </td>
+<td width="50%" valign="top">
+
+### 🎨 Profile Customization Studio
+
+**Make your profile yours.**
+
+A free, local-first Windows creative studio for designing banners, motion, profile layouts, GitHub README sections, stats, buttons, icons, themes, and reusable profile assets without turning customization into a pile of hand-edited files.
+
+**Current status:** `v0.3.3` is the first stable public release, with animated previews and GIF, WebM, MP4, PNG, JPEG, WebP, SVG, and GitHub profile package exports.
+
+<br/>
+
+[![Repository](https://img.shields.io/badge/Repository-263226?style=flat-square&logo=github)](https://github.com/amgedi/Profile-Customization-Studio)
+[![Public Release](https://img.shields.io/badge/Public_Release-v0.3.3-6F875F?style=flat-square&logo=windows&logoColor=white)](https://github.com/amgedi/Profile-Customization-Studio/releases/tag/v0.3.3)
+
+[![Getting Started](https://img.shields.io/badge/Getting_Started-Start_Here-58704F?style=flat-square)](https://github.com/amgedi/Profile-Customization-Studio/blob/main/docs/getting-started.md)
+[![License](https://img.shields.io/badge/License-AGPL--3.0-A18463?style=flat-square)](https://github.com/amgedi/Profile-Customization-Studio/blob/main/LICENSE)
+[![Security](https://img.shields.io/badge/Security-Policy-725D45?style=flat-square&logo=github)](https://github.com/amgedi/Profile-Customization-Studio/blob/main/SECURITY.md)
+
+</td>
 </tr>
 </table>
 
@@ -103,9 +124,9 @@ The first public release, **v0.7.0**, includes source preservation, extraction i
 
 ## 🧭 What I'm Working Toward
 
-- Building useful open-source tools for **animals, wildlife, conservation, and better scientific data**.
+- Building useful open-source tools for **animals, wildlife, conservation, better scientific data, and creative open-source workflows**.
 - Learning enough **Cloud & DevOps** to deploy, maintain, secure, and monitor the things I build properly.
-- Making uncertainty, provenance, and privacy part of the product design instead of afterthoughts.
+- Making uncertainty, provenance, privacy, accessibility, and user control part of the product design instead of afterthoughts.
 - Turning projects into software that real testers can actually install, use, break, and help improve.
 
 <br/>
