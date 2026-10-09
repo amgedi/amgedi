@@ -111,10 +111,6 @@ jobs:
                   if not x_match or not y_match:
                       continue
 
-                  # Rectangles are inset by 2px while the snake moves on a
-                  # 16px grid. Avoid the very beginning/end of the snake route:
-                  # those cells are eaten almost immediately or during the reset
-                  # sweep and looked like invisible collisions rather than food.
                   cell = (int(x_match.group(1)) - 2, int(y_match.group(1)) - 2)
                   eat_at = route_times.get(cell)
                   if eat_at is not None and 8.0 <= eat_at <= 88.0:
@@ -151,11 +147,6 @@ jobs:
               }
               events = {}
 
-              # Explicitly define EVERY round for every decorated cell. The old
-              # version only emitted keyframes for rounds where a cell happened
-              # to be selected, so CSS interpolated through the gaps and created
-              # faint/ghost food. Using step timing + explicit blank baselines
-              # means a bonus is either clearly visible or truly absent.
               for round_index in range(rounds):
                   start = round_index * span
                   end = (round_index + 1) * span
@@ -171,8 +162,6 @@ jobs:
                   eat = start + (eat_at / 100.0) * span
                   eat = max(start + epsilon, min(end - 2 * epsilon, eat))
 
-                  # Food is visible from the beginning of the snake round until
-                  # the head reaches it, then disappears immediately as if eaten.
                   events[start] = color
                   events[eat] = color
                   events[min(end - epsilon, eat + epsilon)] = "var(--ce)"
@@ -189,11 +178,6 @@ jobs:
                   f"animation-iteration-count:infinite}}"
               )
 
-          # A static SVG cannot execute JavaScript for fresh infinite randomness
-          # on GitHub. Instead it contains twelve independently randomized garden
-          # layouts. Each snake loop advances to the next layout; after twelve
-          # rounds the sequence repeats. A workflow regeneration creates a fresh
-          # twelve-round sequence.
           round_count = 12
           run_seed = (
               os.environ.get("GITHUB_RUN_ID")
@@ -227,14 +211,11 @@ jobs:
                   )
                   selected = select_round(candidates, rng, limit=18)
 
-                  # Make the brown family impossible to miss: exactly half of
-                  # each round's bonus cells use brown shades, half use greens.
                   brown_count = len(selected) // 2
                   families = ["brown"] * brown_count
                   families += ["green"] * (len(selected) - brown_count)
                   rng.shuffle(families)
 
-                  # Favor middle shades; very pale/dark colors remain accents.
                   shade_weights = [0.20, 0.38, 0.30, 0.12]
                   for cell, family in zip(selected, families):
                       colors = palette[f"garden_{family}"]
@@ -273,9 +254,15 @@ jobs:
                   return f'<rect class="c {class_name}"{rest}/>'
 
               svg = blank_cell.sub(decorate, svg)
+
+              # snk compresses eaten contribution runs into long .u rectangles.
+              # GitHub can render those as a lopsided horizontal color bar, so
+              # keep the real contribution cells and snake but hide that helper layer.
+              helper_layer_fix = ".u{opacity:0!important}"
+
               svg = svg.replace(
                   "</style>",
-                  snake_overrides + "".join(garden_css) + "</style>",
+                  helper_layer_fix + snake_overrides + "".join(garden_css) + "</style>",
                   1,
               )
               path.write_text(svg, encoding="utf-8")
