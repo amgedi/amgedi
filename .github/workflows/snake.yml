@@ -121,24 +121,32 @@ jobs:
                       cells.append(cell)
               return cells
 
-          def select_round(candidates, rng, limit=18):
+          def select_round(candidates, rng, limit=32):
               pool = candidates[:]
               rng.shuffle(pool)
               selected = []
+              density = {}
 
-              def too_close(cell):
-                  x, y = cell
-                  return any(
-                      abs(x - sx) <= 16 and abs(y - sy) <= 16
-                      for sx, sy in selected
-                  )
-
+              # Spread snacks across the route, but allow neighboring cells so
+              # the garden actually looks full instead of weirdly sparse.
               for cell in pool:
                   if len(selected) >= limit:
                       break
-                  if too_close(cell):
+                  x, y = cell
+                  bucket = (x // 64, y // 32)
+                  if density.get(bucket, 0) >= 3:
                       continue
                   selected.append(cell)
+                  density[bucket] = density.get(bucket, 0) + 1
+
+              # If the route is short or unusually clustered, still fill the
+              # target count from the remaining shuffled cells.
+              if len(selected) < limit:
+                  for cell in pool:
+                      if len(selected) >= limit:
+                          break
+                      if cell not in selected:
+                          selected.append(cell)
 
               return selected
 
@@ -182,7 +190,10 @@ jobs:
                   f"animation-iteration-count:infinite}}"
               )
 
-          round_count = 12
+          # A longer sequence gives the garden many clearly different layouts.
+          # The actual reshuffle still happens once per snake lap.
+          round_count = 16
+          garden_cells_per_round = 32
           run_seed = (
               os.environ.get("GITHUB_RUN_ID")
               or datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
@@ -213,7 +224,11 @@ jobs:
                   rng = random.Random(
                       f"{run_seed}:{run_attempt}:{shared_seed_name}:round:{round_index}"
                   )
-                  selected = select_round(candidates, rng, limit=18)
+                  selected = select_round(
+                      candidates,
+                      rng,
+                      limit=garden_cells_per_round,
+                  )
 
                   brown_count = len(selected) // 2
                   families = ["brown"] * brown_count
