@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/profile-banner-motion.svg" width="100%" alt="AMGED — open-source software, wildlife, conservation, better data, cloud and DevOps" />
+<img src="./assets/profile-banner-motion.svg" width="100%" alt="AMGED | open-source software, wildlife, conservation, better data, cloud and DevOps" />
 
 <br/>
 
@@ -11,13 +11,17 @@
 
 </div>
 
+<br/>
+
 ## 👋 About Me
 
-Hello!! I've been trying to learning by building real open source projects around animals, conservation, research friendly data, and practical field workflows.
+Hello!! I've been learning by building real open-source projects around animals, conservation, research-friendly data, and practical field workflows.
 
-I love projects where the software needs help in dealing with messy information, uncertainty, and real constraints that may lack in wherever field it's located in. **(& Hopefully i would've learned cloud, devOps, linux, git/gitHub, py, ts, desktop dev, and computer vision by the time i'm done!)**.
+I like projects where the software has to deal with messy information, uncertainty, privacy, and real-world constraints instead of pretending everything arrives perfectly clean. **Hopefully by the time I'm done I'll have learned a ridiculous amount of cloud, DevOps, Linux, Git/GitHub, Python, TypeScript, desktop development, and computer vision too xD.**
 
-> I'm still learning, so these projects are not presented as professional veterinary, clinical, emergency response, or research services. I build them openly, test them hard, document what breaks, and keep improving them with proper testing. I'm always available for contact!
+> I'm still learning, so these projects are not presented as professional veterinary, clinical, emergency response, or research services. I build them openly, test them hard, document what breaks, and keep improving them with proper testing. I'm always happy to hear feedback!
+
+<br/>
 
 ## 🌿 Featured Projects
 
@@ -31,9 +35,16 @@ I love projects where the software needs help in dealing with messy information,
 
 A local-first, privacy-conscious desktop tool for recording wildlife incidents and preserving context as information moves between reporters, responders, transporters, rehabilitation organizations, and other wildlife professionals.
 
-**Current focus:** external tester releases, privacy, maps, handoffs, local workflows, and safe updates.
+**Current status:** `v0.3.0-rc.2` is an external **tester build**, not a finished stable release.
+
+<br/>
 
 [![Repository](https://img.shields.io/badge/Repository-263226?style=flat-square&logo=github)](https://github.com/amgedi/Wildlife-Incident-Handoff)
+[![RC2 Tester Build](https://img.shields.io/badge/Tester_Build-v0.3.0--rc.2-6F875F?style=flat-square&logo=windows&logoColor=white)](https://github.com/amgedi/Wildlife-Incident-Handoff/releases/tag/v0.3.0-rc.2)
+
+[![Tester Guide](https://img.shields.io/badge/Tester_Guide-Start_Here-58704F?style=flat-square)](https://github.com/amgedi/Wildlife-Incident-Handoff/blob/main/docs/TESTER_README.md)
+[![License](https://img.shields.io/badge/License-AGPL--3.0-A18463?style=flat-square)](https://github.com/amgedi/Wildlife-Incident-Handoff/blob/main/LICENSE)
+[![Security](https://img.shields.io/badge/Security-Policy-725D45?style=flat-square&logo=github)](https://github.com/amgedi/Wildlife-Incident-Handoff/blob/main/SECURITY.md)
 
 </td>
 <td width="50%" valign="top">
@@ -44,12 +55,22 @@ An open-source project for structured feline-health observations and research-re
 
 It began around Feline Hyperesthesia Syndrome and is growing toward a broader open feline-health standard.
 
+**Current status:** `v0.5.8-alpha.11` is a **tester alpha**, not a finished stable release.
+
+<br/>
+
 [![Repository](https://img.shields.io/badge/Repository-263226?style=flat-square&logo=github)](https://github.com/amgedi/OpenFHS)
-[![Latest Release](https://img.shields.io/github/v/release/amgedi/OpenFHS?include_prereleases&style=flat-square&color=6F875F)](https://github.com/amgedi/OpenFHS/releases)
+[![Tester Alpha](https://img.shields.io/badge/Tester_Alpha-v0.5.8--alpha.11-6F875F?style=flat-square&logo=windows&logoColor=white)](https://github.com/amgedi/OpenFHS/releases/tag/v0.5.8-alpha.11)
+
+[![Tester Guide](https://img.shields.io/badge/Tester_Guide-Start_Here-58704F?style=flat-square)](https://github.com/amgedi/OpenFHS/blob/main/docs/tester-alpha.md)
+[![License](https://img.shields.io/badge/License-AGPL--3.0-A18463?style=flat-square)](https://github.com/amgedi/OpenFHS/blob/main/LICENSE)
+[![Security](https://img.shields.io/badge/Security-Policy-725D45?style=flat-square&logo=github)](https://github.com/amgedi/OpenFHS/blob/main/SECURITY.md)
 
 </td>
 </tr>
 </table>
+
+<br/>
 
 <table>
 <tr>
@@ -63,13 +84,22 @@ A local-first open-source desktop workbench for preserving, investigating, repai
 
 The first public release, **v0.7.0**, includes source preservation, extraction inspection, evidence-aware investigation, repair previews, validation workflows, guided tutorials, Bio Buddy, modern drag-and-drop imports, and a native Windows launcher with explicit runtime selection and local rollback support.
 
+**Current status:** `v0.7.0` is the first public release.
+
+<br/>
+
 [![Repository](https://img.shields.io/badge/Repository-263226?style=flat-square&logo=github)](https://github.com/amgedi/Biodiversity-Data-Rescue-Workbench)
-[![Latest Release](https://img.shields.io/github/v/release/amgedi/Biodiversity-Data-Rescue-Workbench?style=flat-square&color=6F875F)](https://github.com/amgedi/Biodiversity-Data-Rescue-Workbench/releases/latest)
-[![License](https://img.shields.io/github/license/amgedi/Biodiversity-Data-Rescue-Workbench?style=flat-square&color=A18463)](https://github.com/amgedi/Biodiversity-Data-Rescue-Workbench/blob/main/LICENSE)
+[![Public Release](https://img.shields.io/badge/Public_Release-v0.7.0-6F875F?style=flat-square&logo=windows&logoColor=white)](https://github.com/amgedi/Biodiversity-Data-Rescue-Workbench/releases/tag/v0.7.0)
+
+[![Docs](https://img.shields.io/badge/Docs-Start_Here-58704F?style=flat-square)](https://github.com/amgedi/Biodiversity-Data-Rescue-Workbench/blob/main/docs/README.md)
+[![License](https://img.shields.io/badge/License-AGPL--3.0-A18463?style=flat-square)](https://github.com/amgedi/Biodiversity-Data-Rescue-Workbench/blob/main/LICENSE)
+[![Security](https://img.shields.io/badge/Security-Policy-725D45?style=flat-square&logo=github)](https://github.com/amgedi/Biodiversity-Data-Rescue-Workbench/blob/main/SECURITY.md)
 
 </td>
 </tr>
 </table>
+
+<br/>
 
 ## 🧭 What I'm Working Toward
 
@@ -77,6 +107,8 @@ The first public release, **v0.7.0**, includes source preservation, extraction i
 - Learning enough **Cloud & DevOps** to deploy, maintain, secure, and monitor the things I build properly.
 - Making uncertainty, provenance, and privacy part of the product design instead of afterthoughts.
 - Turning projects into software that real testers can actually install, use, break, and help improve.
+
+<br/>
 
 ## 🌱 What I'm Learning
 
@@ -90,6 +122,8 @@ The first public release, **v0.7.0**, includes source preservation, extraction i
 
 </div>
 
+<br/>
+
 ## 📊 GitHub Activity
 
 <div align="center">
@@ -98,23 +132,31 @@ The first public release, **v0.7.0**, includes source preservation, extraction i
 
 </div>
 
+<br/>
+
 ## 🐍 Contribution Garden
 
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden-dark.svg?v=20261006-garden4" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden.svg?v=20261006-garden4" />
-  <img alt="Animated contribution snake with a randomized earthy garden" src="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden.svg?v=20261006-garden4" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden-dark.svg?v=20261008-garden5" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden.svg?v=20261008-garden5" />
+  <img alt="Animated contribution snake with a randomized earthy garden" src="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden.svg?v=20261008-garden5" />
 </picture>
 
-<sub>Bonus garden cells reshuffle between snake rounds, mixing sage greens and earthy browns for extra snacks xD</sub>
+<br/>
+
+<sub>Each snake lap gets a denser shuffled garden of sage greens and earthy browns, so there should actually be enough snacks to notice now xD</sub>
 
 </div>
+
+<br/>
 
 ## 🧰 How I Build
 
 Most of my projects start messy. I try to keep the original source intact, make uncertain things visible, keep important changes reversible, and choose tools I can actually understand and maintain.
+
+<br/>
 
 ## 💜 Support My Open-Source Work
 
