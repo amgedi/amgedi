@@ -163,7 +163,7 @@ A free, local-first Windows creative studio for designing banners, motion, profi
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden-dark.svg?v=20261008-garden5" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden.svg?v=20261008-garden5" />
   <img alt="Animated contribution snake with a randomized earthy garden" src="https://raw.githubusercontent.com/amgedi/amgedi/output/github-contribution-garden.svg?v=20261008-garden5" />
-</picture>a
+</picture>
 </div>
 
 <br/>
